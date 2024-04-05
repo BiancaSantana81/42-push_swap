@@ -6,9 +6,13 @@
 #    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 11:36:10 by bsantana          #+#    #+#              #
-#    Updated: 2024/04/05 14:05:18 by bsantana         ###   ########.fr        #
+#    Updated: 2024/04/05 17:43:41 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+# Colors to print message
+GREEN := \033[1;32m
+WHITE := \033[1;37m
 
 # Executable name
 NAME = push_swap
@@ -21,7 +25,7 @@ CFLAGS = -g3 -Wextra -Werror -Wall
 SRC_DIR = src
 
 # Source directory where .c files are located
-FILES_SRC = main.c
+FILES_SRC = initialize_stack.c main.c utils.c utils2.c
 
 # List of object files derived from source files
 FILES_SRC_O = $(FILES_SRC:.c=.o)
@@ -43,6 +47,7 @@ all: $(NAME)
 # Build the final executable
 $(NAME): $(OBJS)
 	@$(CC) $(OBJS) -o $(NAME)
+	@echo "$(GREEN)Push_swap successfully compiled!"
 
 # Clean object files
 clean:
@@ -50,6 +55,8 @@ clean:
 
 # Clean everything ((including the executable)
 fclean: clean
+	@rm -rf $(NAME)
+	@echo "$(WHITE)Cleaning - PUSH_SWAP - completed!"
 
 # Clean and rebuild everything
 re: clean all
