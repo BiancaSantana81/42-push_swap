@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/08 12:30:29 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/08 15:59:21 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,13 @@ typedef struct s_stack
 }	t_stack;
 
 /* Estrutura de dados */
-void		stack_init(t_stack **stack_a, char **argv, bool flag_argc_2);
-void		error(t_stack **stack_a, char **argv, bool flag_argc_2);
+void		stack_init(t_stack **stack_a, char **argv);
+void		error(t_stack **stack);
+void		ft_putstr_fd(char *s, int fd);
 void		free_stack(t_stack **stack);
-void		free_matrix(char **argv);
 int			only_numbers(char *str);
+int			repeats_numbers(char **argv);
+int			aux_repeats_numbers(const char *s1, const char *s2);
 
 /*   *** Auxiliares ***  */
 

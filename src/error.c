@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 10:38:37 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/08 11:36:10 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/08 15:58:59 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,21 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-void	free_matrix(char **argv)
+void	error(t_stack **stack)
+{
+	free_stack(stack);
+	write (2, "Error\n", 6);
+	exit(1);
+}
+
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
-	if (argv == NULL || *argv == NULL)
-		return ;
 	i = 0;
-	while (argv[i])
+	while (s[i])
 	{
-		free(argv[i]);
+		write (fd, &s[i], 1);
 		i++;
 	}
-	free(argv);
-}
-
-void	error(t_stack **stack, char **argv, bool flag_argc_2)
-{
-	free_stack(stack);
-	if (flag_argc_2)
-		free_matrix(argv);
-	write (2, "Error\n", 6);
-	exit(1);
 }
