@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:19:39 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/08 16:37:44 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/08 16:40:05 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	only_numbers(char *str)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (str[i])
 	{
 		if (!(str[i] == '+' || str[i] == '-'
