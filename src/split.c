@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:12:13 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/05 15:13:06 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/08 09:56:53 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,28 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	return (word_memory);
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*p;
+
+	p = s;
+	while (n--)
+	{
+		*p++ = 0;
+	}
+}
+
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	int		*t;
+
+	t = malloc(nmemb * size);
+	if (t == NULL)
+	{
+		return (t);
+	}
+	ft_bzero(t, nmemb * size);
+	return (t);
 }

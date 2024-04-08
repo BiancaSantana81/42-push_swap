@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 11:36:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/08 11:36:25 by bsantana         ###   ########.fr       */
+/*   Created: 2024/04/05 15:19:39 by bsantana          #+#    #+#             */
+/*   Updated: 2024/04/08 12:58:21 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	only_numbers(char *str)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	// int		stack_size;
+	int	i;
 
-	stack_a = NULL;
-	stack_b = NULL;
-
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	else if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	stack_init(&stack_a, argv, argc == 2);
+	i = 0;
+	while (str[i])
+	{
+		if (!(str[i] == '+' || str[i] == '-'
+				|| (str[i] >= '0' && str[i] <= '9')))
+			return (0);
+		if ((str[i] == '-' || str[i] == '+')
+			&& (!(str[1] >= '0' && str[1] <= '9')))
+			return (0);
+		i++;
+	}
+	return (1);
 }

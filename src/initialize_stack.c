@@ -6,22 +6,54 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:09:04 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/05 17:45:45 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/08 12:39:05 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-void	stack_init(char **argv)
+
+long int	ft_atol(const char *nptr)
 {
-	long	nbr;
-	int		i;
+	int			i;
+	long		r;
+	int			sign;
+
+	i = 0;
+	r = 0;
+	sign = 1;
+	while (nptr[i] == ' ' || nptr[i] == '\n' || nptr[i] == '\t'
+		|| nptr[i] == '\v' || nptr[i] == '\f' || nptr[i] == '\r')
+	{
+		i++;
+	}
+	if (nptr[i] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+	else if (nptr[i] == '+')
+		i++;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		r = r * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (r * sign);
+}
+
+void	stack_init(t_stack **stack_a, char **argv, bool flag_argc_2)
+{
+	long		nbr;
+	int			i;
 
 	i = 0;
 	while (argv[i])
 	{
-		nbr = ft_atoi(argv[i]);
+		if (only_numbers(argv[i]) == 0)
+			printf("erro");
+		nbr = ft_atol(argv[i]);
+		if (!(nbr >= INT_MIN && nbr <= INT_MAX))
+			error(stack_a, argv, flag_argc_2);
 		i++;
 	}
-	printf("%ld", nbr);
 }
