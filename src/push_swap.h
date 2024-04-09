@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/09 13:25:52 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/09 16:45:19 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,16 @@ int			only_numbers(char *str);
 int			repeats_numbers(char **argv);
 int			aux_repeats_numbers(const char *s1, const char *s2);
 int			zero_count(char *av);
+t_stack		*init_stack(int ac, char **av);
+void		node_list_bottom(t_stack **stack, t_stack *new);
+t_stack		*get_bottom_list(t_stack *stack);
+t_stack		*add_node(int nbr);
 
 /*   *** Auxiliares ***  */
 
 /* Usada para pegar os valores tradizos como argumento quando
 * eles vem em um único argumento separado por espaços */
-char		**ft_split(char const *s, char c);
-void		*ft_calloc(size_t nmemb, size_t size);
-void		ft_bzero(void *s, size_t n);
 long int	ft_atol(const char *nptr);
+void		printf_stack(t_stack *stack_a);
 
 #endif
