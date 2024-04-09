@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 13:58:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/09 17:16:06 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/09 17:33:42 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ t_stack	*init_stack(int ac, char **av)
 		if (!(nbr > INT_MIN && nbr < INT_MAX))
 			error(&stack_a);
 		if (i == 1)
-			add_node((int)nbr);
+			stack_a = add_node((int)nbr);
 		else
 			node_list_bottom(&stack_a, add_node((int)nbr));
 		i++;
@@ -69,11 +69,11 @@ t_stack	*init_stack(int ac, char **av)
 	return (stack_a);
 }
 
-void	printf_stack(t_stack *stack_a)
-{
-	while (stack_a != NULL)
-	{
-		printf("%d", stack_a->value);
-		stack_a = stack_a->next;
-	}
-}
+// void	printf_stack(t_stack *stack_a)
+// {
+// 	while (stack_a != NULL)
+// 	{
+// 		printf("%d\n", stack_a->value);
+// 		stack_a = stack_a->next;
+// 	}
+// }
