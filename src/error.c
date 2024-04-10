@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 10:38:37 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/08 15:58:59 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/09 18:08:38 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,4 @@ void	error(t_stack **stack)
 	free_stack(stack);
 	write (2, "Error\n", 6);
 	exit(1);
-}
-
-void	ft_putstr_fd(char *s, int fd)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		write (fd, &s[i], 1);
-		i++;
-	}
 }
