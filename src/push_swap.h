@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/10 13:51:17 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:26:57 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,11 @@ void		swap(t_stack *stack);
  */
 void		push(t_stack **src, t_stack **dest);
 
+/*  Moves the first element of the stack to the end,
+ *  reorganizing the elements of the stack. 
+ */
+void		rotate(t_stack **stack);
+
 /**** Movements ****/
 
 void		do_sa(t_stack **stack_a);
@@ -110,6 +115,9 @@ void		do_sb(t_stack **stack_b);
 void		do_ss(t_stack **stack_a, t_stack **stack_b);
 void		pa(t_stack **stack_a, t_stack **stack_b);
 void		pb(t_stack **stack_a, t_stack **stack_b);
+void		do_ra(t_stack **stack_a);
+void		do_rb(t_stack **stack_b);
+void		do_rr(t_stack **stack_a, t_stack **stack_b);
 
 /**** Errors and memory deallocation ****/
 
