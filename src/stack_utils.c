@@ -1,38 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialize.c                                       :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 13:58:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/10 14:27:51 by bsantana         ###   ########.fr       */
+/*   Created: 2024/04/10 14:37:51 by bsantana          #+#    #+#             */
+/*   Updated: 2024/04/10 15:46:35 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_stack	*init_stack(int ac, char **av)
-{
-	t_stack	*stack_a;
-	int		i;
-	long	nbr;
-
-	stack_a = NULL;
-	i = 1;
-	while (i < ac)
-	{
-		nbr = ft_atol(av[i]);
-		if (!(nbr > INT_MIN && nbr < INT_MAX))
-			error(&stack_a);
-		if (i == 1)
-			stack_a = add_node((int)nbr);
-		else
-			node_list_bottom(&stack_a, add_node((int)nbr));
-		i++;
-	}
-	return (stack_a);
-}
 
 t_stack	*add_node(int nbr)
 {
@@ -70,6 +48,13 @@ void	node_list_bottom(t_stack **stack, t_stack *new)
 t_stack	*get_bottom_list(t_stack *stack)
 {
 	while (stack && stack->next != NULL)
+		stack = stack->next;
+	return (stack);
+}
+
+t_stack	*get_before_bottom_list(t_stack *stack)
+{
+	while (stack && stack->next && stack->next->next != NULL)
 		stack = stack->next;
 	return (stack);
 }

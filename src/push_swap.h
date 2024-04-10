@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/10 14:26:57 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:46:43 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,12 @@ void		node_list_bottom(t_stack **stack, t_stack *new);
 /* Returns a pointer to the last node in the list.*/
 t_stack		*get_bottom_list(t_stack *stack);
 
+/* 
+ * Returns a pointer to the penultimate node on the stack.
+ * If the stack is empty or has only one node, returns NULL.
+ */
+t_stack		*get_before_bottom_list(t_stack *stack);
+
 /* Returns the size of the stack. */
 int			get_stack_size(t_stack *stack);
 
@@ -118,6 +124,10 @@ void		pb(t_stack **stack_a, t_stack **stack_b);
 void		do_ra(t_stack **stack_a);
 void		do_rb(t_stack **stack_b);
 void		do_rr(t_stack **stack_a, t_stack **stack_b);
+void		do_rra(t_stack **stack_a);
+void		do_rrb(t_stack **stack_b);
+void		do_rrr(t_stack **stack_a, t_stack **stack_b);
+
 
 /**** Errors and memory deallocation ****/
 
