@@ -6,7 +6,7 @@
 #    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 11:36:10 by bsantana          #+#    #+#              #
-#    Updated: 2024/04/10 11:59:02 by bsantana         ###   ########.fr        #
+#    Updated: 2024/04/10 12:11:44 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ CFLAGS = -g3 -Wextra -Werror -Wall
 SRC_DIR = src
 
 # Source directory where .c files are located
-FILES_SRC = checks.c error.c utils.c main.c initialize.c swap.c
+FILES_SRC = checks.c error.c utils.c main.c initialize.c swap.c push.c
 
 # List of object files derived from source files
 FILES_SRC_O = $(FILES_SRC:.c=.o)
