@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:37:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/10 15:46:35 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:46:33 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	get_stack_size(t_stack *stack)
 // {
 // 	while (stack != NULL)
 // 	{
-// 		printf("valor: %d\n", stack->value);
+// 		printf("valor: %d\n next: %d", stack->value, stack->next);
 // 		stack = stack->next;
 // 	}
 // }
