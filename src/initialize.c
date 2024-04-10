@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 13:58:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/10 10:34:27 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/10 10:58:09 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,21 @@ t_stack	*get_bottom_list(t_stack *stack)
 	while (stack && stack->next != NULL)
 		stack = stack->next;
 	return (stack);
+}
+
+int	get_stack_size(t_stack *stack)
+{
+	int	size;
+
+	size = 0;
+	if (!stack)
+		return (0);
+	while (stack)
+	{
+		stack = stack->next;
+		size++;
+	}
+	return (size);
 }
 
 // void	printf_stack(t_stack *stack_a)

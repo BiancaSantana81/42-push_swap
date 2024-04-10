@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/10 10:34:38 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:03:33 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ void		node_list_bottom(t_stack **stack, t_stack *new);
 /* Returns a pointer to the last node in the list.*/
 t_stack		*get_bottom_list(t_stack *stack);
 
+/* Returns the size of the stack. */
+int			get_stack_size(t_stack *stack);
 
 /**** Errors and memory deallocation ****/
 
