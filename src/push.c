@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 11:36:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/10 16:46:48 by bsantana         ###   ########.fr       */
+/*   Created: 2024/04/10 12:11:25 by bsantana          #+#    #+#             */
+/*   Updated: 2024/04/10 13:54:11 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	push(t_stack **src, t_stack **dest)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	int		stack_size;
+	t_stack	*tmp;
 
-	stack_b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	if (correct_input(argv) == 1)
-		ft_putstr_fd("Error\n", 2);
-	stack_a = init_stack(argc, argv);
-	stack_size = get_stack_size(stack_a);
-	return (0);
+	if (*src == NULL)
+		return ;
+	tmp = (*src)->next;
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = tmp;
+}
+
+void	pa(t_stack **stack_a, t_stack **stack_b)
+{
+	push(stack_a, stack_b);
+	ft_putstr_fd("pa\n", 1);
+}
+
+void	pb(t_stack **stack_a, t_stack **stack_b)
+{
+	push(stack_b, stack_a);
+	ft_putstr_fd("pb\n", 1);
 }
