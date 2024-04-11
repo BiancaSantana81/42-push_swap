@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:36:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/11 17:25:57 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/11 18:08:36 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,5 @@ int	main(int argc, char **argv)
 	assign_indexes(stack_a);
 	is_sorted(stack_a);
 	push_swap(stack_a, stack_b, stack_size);
-	highest_index(stack_a);
 	return (0);
 }
