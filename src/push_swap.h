@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/11 17:22:30 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/11 20:00:13 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,11 +101,28 @@ int			get_stack_size(t_stack *stack);
  */
 int			is_sorted(t_stack *stack);
 
-/*ADICIONAR COMENTÁRIO - FUNÇÃO EM CONSTRUÇÃO */
+/*
+ * It analyzes which sorting method is
+ * the most valid according to the size of the stack.
+ * - = 2 -> swap the two elements.
+ * - = 3 -> tiny sort.
+ * - > 3 -> sort. 
+ */
 void		push_swap(t_stack *stack_a, t_stack *stack_b, int stack_size);
 
-/**/
+/* Search for the index with the highest value. */
 int			highest_index(t_stack *stack);
+
+/*
+ * Sorts a stack of three elements.
+ * 
+ * - If the first element in the stack has the
+ * highest index, it performs a rotation (ra).
+ * - If the second element in the stack has
+ * the highest index, it performs an inverse rotation (rra).
+ * - Checks if the list is sorted and, if not, swaps the first two elements. 
+*/
+void		sort_tiny(t_stack *stack);
 
 /*
  * Assigns an index to each of the values on the stack.
@@ -176,7 +193,7 @@ void		error(t_stack **stack);
 long int	ft_atol(const char *nptr);
 void		ft_putstr_fd(char *s, int fd);
 
-# include <stdio.h>
-void	printf_stack(t_stack *stack);
+// # include <stdio.h>
+// void	printf_stack(t_stack *stack);
 
 #endif
