@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/11 16:21:53 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/11 17:22:30 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,11 +104,14 @@ int			is_sorted(t_stack *stack);
 /*ADICIONAR COMENTÁRIO - FUNÇÃO EM CONSTRUÇÃO */
 void		push_swap(t_stack *stack_a, t_stack *stack_b, int stack_size);
 
+/**/
+int			highest_index(t_stack *stack);
+
 /*
  * Assigns an index to each of the values on the stack.
  * As an example:
- *               0   9   1
- *              [1] [3] [2]
+ *               0    9    1
+ *              [1]  [3]  [2]
  * 
  * By assigning indices we can compare the
  * values of the indices instead of the actual value. 
@@ -173,7 +176,7 @@ void		error(t_stack **stack);
 long int	ft_atol(const char *nptr);
 void		ft_putstr_fd(char *s, int fd);
 
-// # include <stdio.h>
-// void	printf_stack(t_stack *stack);
+# include <stdio.h>
+void	printf_stack(t_stack *stack);
 
 #endif
