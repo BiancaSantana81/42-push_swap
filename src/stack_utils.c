@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:37:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/10 16:46:33 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:25:05 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_stack	*add_node(int nbr)
 	if (!new_node)
 		return (NULL);
 	new_node->value = nbr;
-	new_node->index = 0;
+	new_node->index = 1;
 	new_node->pos = -1;
 	new_node->target_pos = -1;
 	new_node->cost_a = -1;
@@ -78,7 +78,7 @@ int	get_stack_size(t_stack *stack)
 // {
 // 	while (stack != NULL)
 // 	{
-// 		printf("valor: %d\n next: %d", stack->value, stack->next);
+// 		printf("valor: %d\nindex: %d\n", stack->value, stack->index);
 // 		stack = stack->next;
 // 	}
 // }

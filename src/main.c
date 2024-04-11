@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:36:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/10 16:46:48 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:37:46 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int	main(int argc, char **argv)
 		ft_putstr_fd("Error\n", 2);
 	stack_a = init_stack(argc, argv);
 	stack_size = get_stack_size(stack_a);
+	assign_indexes(stack_a);
+	printf_stack(stack_a);
 	return (0);
 }

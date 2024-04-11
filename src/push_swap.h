@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/10 16:46:23 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:37:14 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,15 @@ t_stack		*get_before_bottom_list(t_stack *stack);
 
 /* Returns the size of the stack. */
 int			get_stack_size(t_stack *stack);
+
+/*
+ * Assigns an index to each of the values on the stack.
+ * As an example 0   9   1
+ *              [1] [3] [2]
+ * By assigning indices we can compare the
+ * values of the indices instead of the actual value. 
+*/
+void		assign_indexes(t_stack *stack_a);
 
 /**** Utils for movements ****/
 

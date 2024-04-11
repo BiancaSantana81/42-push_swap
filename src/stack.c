@@ -6,11 +6,30 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 13:58:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/10 15:40:32 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:22:24 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	assign_indexes(t_stack *stack_a)
+{
+	t_stack	*current;
+	t_stack	*runner;
+
+	current = stack_a;
+	while (current)
+	{
+		runner = stack_a;
+		while (runner)
+		{	
+			if (runner->value < current->value)
+				current->index++;
+			runner = runner->next;
+		}
+	current = current->next;
+	}
+}
 
 t_stack	*init_stack(int ac, char **av)
 {
