@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:54:28 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/10 14:09:00 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/12 16:58:04 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	rotate(t_stack **stack)
 	tmp = *stack;
 	*stack = (*stack)->next;
 	tail = get_bottom_list(*stack);
-	tmp->next = NULL;
 	tail->next = tmp;
+	tmp->next = NULL;
 }
 
 void	do_ra(t_stack **stack_a)

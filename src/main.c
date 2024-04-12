@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:36:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/11 18:17:21 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/12 19:16:33 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,15 @@ int	is_sorted(t_stack *stack)
 	return (0);
 }
 
-void	push_swap(t_stack *stack_a, t_stack *stack_b, int stack_size)
+void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
-	stack_b = NULL;
-	if (stack_size == 2 && is_sorted(stack_a) == 1)
-		do_sa(&stack_a);
-	if (stack_size == 3 && is_sorted(stack_a) == 1)
+	*stack_b = NULL;
+	if (stack_size == 2)
+		do_sa(stack_a);
+	else if (stack_size == 3)
 		sort_tiny(stack_a);
+	else if (stack_size > 3)
+		pushing_to_stack_b(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -37,6 +39,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	int		stack_size;
+	// t_stack	*current;
 
 	stack_b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
@@ -46,7 +49,7 @@ int	main(int argc, char **argv)
 	stack_a = init_stack(argc, argv);
 	stack_size = get_stack_size(stack_a);
 	assign_indexes(stack_a);
-	is_sorted(stack_a);
-	push_swap(stack_a, stack_b, stack_size);
+	if (is_sorted(stack_a) == 1)
+		push_swap(&stack_a, &stack_b, stack_size);
 	return (0);
 }

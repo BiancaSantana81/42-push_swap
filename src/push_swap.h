@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/11 20:00:13 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/12 19:04:59 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,10 +108,13 @@ int			is_sorted(t_stack *stack);
  * - = 3 -> tiny sort.
  * - > 3 -> sort. 
  */
-void		push_swap(t_stack *stack_a, t_stack *stack_b, int stack_size);
+void		push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size);
 
 /* Search for the index with the highest value. */
 int			highest_index(t_stack *stack);
+
+/*ADICIONAR COMENTÁRIO: função em construção para empurrar elementos de maior valor para stack b*/
+void		pushing_to_stack_b(t_stack **stack_a, t_stack **stack_b);
 
 /*
  * Sorts a stack of three elements.
@@ -122,7 +125,7 @@ int			highest_index(t_stack *stack);
  * the highest index, it performs an inverse rotation (rra).
  * - Checks if the list is sorted and, if not, swaps the first two elements. 
 */
-void		sort_tiny(t_stack *stack);
+void		sort_tiny(t_stack **stack);
 
 /*
  * Assigns an index to each of the values on the stack.
@@ -145,7 +148,7 @@ void		assign_indexes(t_stack *stack_a);
  * - The values and indices of the first
  * two elements are swapped with each other.
  */
-void		swap(t_stack *stack);
+void		swap(t_stack **stack);
 
 /*  Pushes the first element from one stack to another.
  * If the source stack is empty, it does not perform any operation.
@@ -167,8 +170,8 @@ void		rev_rotate(t_stack **stack);
 void		do_sa(t_stack **stack_a);
 void		do_sb(t_stack **stack_b);
 void		do_ss(t_stack **stack_a, t_stack **stack_b);
-void		pa(t_stack **stack_a, t_stack **stack_b);
-void		pb(t_stack **stack_a, t_stack **stack_b);
+void		do_pa(t_stack **stack_a, t_stack **stack_b);
+void		do_pb(t_stack **stack_a, t_stack **stack_b);
 void		do_ra(t_stack **stack_a);
 void		do_rb(t_stack **stack_b);
 void		do_rr(t_stack **stack_a, t_stack **stack_b);
@@ -193,7 +196,8 @@ void		error(t_stack **stack);
 long int	ft_atol(const char *nptr);
 void		ft_putstr_fd(char *s, int fd);
 
-// # include <stdio.h>
-// void	printf_stack(t_stack *stack);
+# include <stdio.h>
+/*EXCLUIR AO FINAL DO PROJETO*/
+void		printf_stack(t_stack *stack);
 
 #endif
