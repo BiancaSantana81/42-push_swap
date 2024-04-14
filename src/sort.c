@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:04:27 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/13 21:53:45 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/14 15:16:41 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,10 @@ void	pushing_to_stack_b(t_stack **stack_a, t_stack **stack_b)
 		else
 			do_ra(stack_a);
 	}
+}
+
+void sort(t_stack **stack_a, t_stack **stack_b)
+{
+	pushing_to_stack_b(stack_a, stack_b);
+	sort_tiny(stack_a);
 }

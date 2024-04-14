@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/13 22:18:35 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/14 15:20:45 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,9 @@ void		sort_tiny(t_stack **stack);
  * values of the indices instead of the actual value. 
 */
 void		assign_indexes(t_stack *stack_a);
+
+/*FUNÇÃO PRINCIPAL DO ALGORITMO - ADICIONAR COMENTÁRIOS*/
+void		sort(t_stack **stack_a, t_stack **stack_b);
 
 /**** Utils for movements ****/
 

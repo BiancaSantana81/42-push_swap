@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:36:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/13 21:52:06 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/14 15:19:14 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 	else if (stack_size == 3)
 		sort_tiny(stack_a);
 	else if (stack_size > 3)
-		pushing_to_stack_b(stack_a, stack_b);
+		sort(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)
