@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_tiny.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 17:04:27 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/13 21:53:45 by bsantana         ###   ########.fr       */
+/*   Created: 2024/04/13 21:34:53 by bsantana          #+#    #+#             */
+/*   Updated: 2024/04/13 21:35:21 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pushing_to_stack_b(t_stack **stack_a, t_stack **stack_b)
+void	sort_tiny(t_stack **stack)
 {
-	int	stack_size;
-	int  media;
-
-	stack_size = get_stack_size(*stack_a);
-	while (stack_size > 3)
-	{
-		stack_size = get_stack_size(*stack_a);
-		media = media_indexes(*stack_a);
-		if (stack_size == 3)
-			break ;
-		if ((*stack_a)->index <= media)
-			do_pb(stack_a, stack_b);
-		else
-			do_ra(stack_a);
-	}
+	if ((*stack)->index == highest_index(*stack))
+		do_ra(stack);
+	else if ((*stack)->next->index == highest_index(*stack))
+		do_rra(stack);
+	if (is_sorted(*stack) == 1)
+		do_sa(stack);
 }

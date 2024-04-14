@@ -3,14 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:37:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/12 19:05:20 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/13 21:47:22 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	get_stack_size(t_stack *stack)
+{
+	int	size;
+
+	size = 0;
+	if (!stack)
+		return (0);
+	while (stack)
+	{
+		stack = stack->next;
+		size++;
+	}
+	return (size);
+}
 
 t_stack	*add_node(int nbr)
 {
@@ -57,21 +72,6 @@ t_stack	*get_before_bottom_list(t_stack *stack)
 	while (stack && stack->next && stack->next->next != NULL)
 		stack = stack->next;
 	return (stack);
-}
-
-int	get_stack_size(t_stack *stack)
-{
-	int	size;
-
-	size = 0;
-	if (!stack)
-		return (0);
-	while (stack)
-	{
-		stack = stack->next;
-		size++;
-	}
-	return (size);
 }
 
 void	printf_stack(t_stack *stack)

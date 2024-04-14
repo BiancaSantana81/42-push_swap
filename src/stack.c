@@ -3,33 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 13:58:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/11 15:22:24 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/13 21:52:17 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	assign_indexes(t_stack *stack_a)
-{
-	t_stack	*current;
-	t_stack	*runner;
-
-	current = stack_a;
-	while (current)
-	{
-		runner = stack_a;
-		while (runner)
-		{	
-			if (runner->value < current->value)
-				current->index++;
-			runner = runner->next;
-		}
-	current = current->next;
-	}
-}
 
 t_stack	*init_stack(int ac, char **av)
 {
@@ -51,4 +32,52 @@ t_stack	*init_stack(int ac, char **av)
 		i++;
 	}
 	return (stack_a);
+}
+
+void	assign_indexes(t_stack *stack_a)
+{
+	t_stack	*current;
+	t_stack	*runner;
+
+	current = stack_a;
+	while (current)
+	{
+		runner = stack_a;
+		while (runner)
+		{	
+			if (runner->value < current->value)
+				current->index++;
+			runner = runner->next;
+		}
+	current = current->next;
+	}
+}
+
+int	highest_index(t_stack *stack)
+{
+	int	index;
+
+	index = stack->index;
+	while (stack)
+	{
+		if (index < stack->index)
+			index = stack->index;
+		stack = stack->next;
+	}
+	return (index);
+}
+
+int	media_indexes(t_stack *stack)
+{
+	int	result;
+	int	stack_size;
+
+	result = 0;
+	stack_size = get_stack_size(stack);
+	while (stack)
+	{
+		result += stack->index;
+		stack = stack->next;
+	}
+	return (result / stack_size);
 }

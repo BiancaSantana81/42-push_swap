@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/12 19:04:59 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/13 22:18:35 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ typedef struct s_stack
 /* Checks for non-numeric characters or repeated values. */
 int			correct_input(char **argv);
 
-/* - Returns 1 if the string contains any
+/* 
+ * - Returns 1 if the string contains any
  * character other than a number, space or '+' sign.
  * - Returns 1 if the '+' sign is not followed by a number.
  * - Returns 0 if the string contains only
@@ -47,13 +48,15 @@ int			only_numbers(char *str);
 /* Checks for repeated values in the input. */
 int			repeats_numbers(char **argv);
 
-/* Auxiliary function to check whether the '+' or '-'
+/* 
+ * Auxiliary function to check whether the '+' or '-'
  * signs should be ignored before comparing the values.
  * If +1 and 1 the sign should be disregarded in the comparison.
  */
 int			aux_repeats_numbers(const char *s1, const char *s2);
 
-/* Checks if the input contains '+0', '-0' or '000'.   
+/* 
+ * Checks if the input contains '+0', '-0' or '000'.   
  * Return: 
  * - Returns 1 if the input contains '+0', '-0' or '000'.
  * - Returns 0 otherwise. 
@@ -97,7 +100,7 @@ int			get_stack_size(t_stack *stack);
 /* 
  * Checks if the stack is sorted.
  *  - Returns 1 if not sorted.
-*   - Returns 0 if sorted. 
+ *   - Returns 0 if sorted. 
  */
 int			is_sorted(t_stack *stack);
 
@@ -113,7 +116,22 @@ void		push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size);
 /* Search for the index with the highest value. */
 int			highest_index(t_stack *stack);
 
-/*ADICIONAR COMENTÁRIO: função em construção para empurrar elementos de maior valor para stack b*/
+/* 
+ * Take the average of the stack indices.
+ *
+ * To do this, we add up all the
+ * indices and divide them by the size of the stack. 
+ * Example:
+ * - Indices: [1] [2] [3] [4] [5] [6] = 21
+ * - Stack size: 6
+ * - Result = 21 / 6 = 3.5 
+ */
+int			media_indexes(t_stack *stack);
+
+/*
+ * This function transfers the smallest values from stack A
+ * to stack B, keeping only the three largest values in A.
+ */
 void		pushing_to_stack_b(t_stack **stack_a, t_stack **stack_b);
 
 /*
@@ -150,17 +168,20 @@ void		assign_indexes(t_stack *stack_a);
  */
 void		swap(t_stack **stack);
 
-/*  Pushes the first element from one stack to another.
+/* 
+ * Pushes the first element from one stack to another.
  * If the source stack is empty, it does not perform any operation.
  */
 void		push(t_stack **src, t_stack **dest);
 
-/*  Moves the first element of the stack to the end,
+/*  
+ * Moves the first element of the stack to the end,
  *  reorganizing the elements of the stack. 
  */
 void		rotate(t_stack **stack);
 
-/* Moves the last element of the stack to the beginning,
+/* 
+ * Moves the last element of the stack to the beginning,
  *  reorganizing the elements of the stack.
  */
 void		rev_rotate(t_stack **stack);
@@ -181,12 +202,14 @@ void		do_rrr(t_stack **stack_a, t_stack **stack_b);
 
 /**** Errors and memory deallocation ****/
 
-/* Releases the memory allocated to each node
+/* 
+ * Releases the memory allocated to each node
  * in the linked list and the memory space occupied by the list.
  */
 void		free_stack(t_stack **stack);
 
-/* Outputs an error message to the standard error
+/* 
+ * Outputs an error message to the standard error
  * output and frees the memory associated with the linked list.
  */
 void		error(t_stack **stack);

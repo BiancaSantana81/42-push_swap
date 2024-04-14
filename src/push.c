@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:11:25 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/12 19:30:35 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/13 16:41:20 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	push(t_stack **src, t_stack **dest)
 
 	if (*src == NULL)
 		return ;
-	tmp = (*src)->next;
-	(*src)->next = *dest;
-	*dest = *src;
-	*src = tmp;
+	tmp = *src;
+	*src = (*src)->next;
+	tmp->next = *dest;
+	*dest = tmp;
 }
 
 void	do_pa(t_stack **stack_a, t_stack **stack_b)
