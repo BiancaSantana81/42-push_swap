@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:04:27 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/15 13:47:32 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:02:48 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	pushing_to_stack_b(t_stack **stack_a, t_stack **stack_b)
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
-
 	pushing_to_stack_b(stack_a, stack_b);
 	sort_tiny(stack_a);
 	while (*stack_b)

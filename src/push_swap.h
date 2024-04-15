@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/15 13:26:00 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:50:22 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,17 @@ int			get_stack_size(t_stack *stack);
 int			is_sorted(t_stack *stack);
 
 /*
+ * Assigns an index to each of the values on the stack.
+ * As an example:
+ *               0    9    1
+ *              [1]  [3]  [2]
+ * 
+ * By assigning indices we can compare the
+ * values of the indices instead of the actual value. 
+*/
+void		assign_indexes(t_stack *stack_a);
+
+/*
  * It analyzes which sorting method is
  * the most valid according to the size of the stack.
  * - = 2 -> swap the two elements.
@@ -113,8 +124,28 @@ int			is_sorted(t_stack *stack);
  */
 void		push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size);
 
+/*
+ * Sorts a stack of three elements.
+ * 
+ * - If the first element in the stack has the
+ * highest index, it performs a rotation (ra).
+ * - If the second element in the stack has
+ * the highest index, it performs an inverse rotation (rra).
+ * - Checks if the list is sorted and, if not, swaps the first two elements. 
+ */
+void		sort_tiny(t_stack **stack);
+
+/*FUNÇÃO PRINCIPAL DO ALGORITMO - EDITAR COMENTÁRIO*/
+void		sort(t_stack **stack_a, t_stack **stack_b);
+
 /* Search for the index with the highest value. */
 int			highest_index(t_stack *stack);
+
+/*
+ * This function transfers the smallest values from stack A
+ * to stack B, keeping only the three largest values in A.
+ */
+void		pushing_to_stack_b(t_stack **stack_a, t_stack **stack_b);
 
 /* 
  * Take the average of the stack indices.
@@ -128,49 +159,27 @@ int			highest_index(t_stack *stack);
  */
 int			media_indexes(t_stack *stack);
 
-/*
- * This function transfers the smallest values from stack A
- * to stack B, keeping only the three largest values in A.
+/* Function to find the position of the value in the list.
+ *
+ * Initializes the list and increments
+ * stack->pos according to its position on the stack. 
  */
-void		pushing_to_stack_b(t_stack **stack_a, t_stack **stack_b);
-
-/*
- * Sorts a stack of three elements.
- * 
- * - If the first element in the stack has the
- * highest index, it performs a rotation (ra).
- * - If the second element in the stack has
- * the highest index, it performs an inverse rotation (rra).
- * - Checks if the list is sorted and, if not, swaps the first two elements. 
-*/
-void		sort_tiny(t_stack **stack);
-
-/*
- * Assigns an index to each of the values on the stack.
- * As an example:
- *               0    9    1
- *              [1]  [3]  [2]
- * 
- * By assigning indices we can compare the
- * values of the indices instead of the actual value. 
-*/
-void		assign_indexes(t_stack *stack_a);
-
-/*FUNÇÃO PRINCIPAL DO ALGORITMO - EDITAR COMENTÁRIO*/
-void		sort(t_stack **stack_a, t_stack **stack_b);
-
-/*FUNÇÃO PARA ENCONTRAR POSIÇÃO DOS VALORES NA PILHA - EDITAR COMENTÁRIO*/
 void		get_position(t_stack **stack);
 
-/*FUNÇÃO PARA CALCULAR CUSTO DE B - EDITAR COMENTÁRIO*/
-void		calculate_cost_a(t_stack *stack_a);
-
-/*FUNÇÃO PARA CALCULAR CUSTO DE B - EDITAR COMENTÁRIO*/
-void		calculate_cost_b(t_stack *stack_b);
-
-
-/*FUNÇÃO PARA CALCULAR CUSTOS DE B*/
+/*
+ * Calculates the cost of bringing
+ * a value from the stack to the top.
+ * If the value is in the second half of the stack,
+ *  it is considered negative. Example:
+ *  5   20   37  41
+ * [0] [1] [-2] [-1]
+ */
 void		take_cost(t_stack **stack_a, t_stack **stack_b);
+
+/**** functions for calculating costs ****/
+
+void		calculate_cost_a(t_stack *stack_a);
+void		calculate_cost_b(t_stack *stack_b);
 
 /**** Utils for movements ****/
 
@@ -236,7 +245,7 @@ long int	ft_atol(const char *nptr);
 void		ft_putstr_fd(char *s, int fd);
 
 /*EXCLUIR AO FINAL DO PROJETO*/
-# include <stdio.h>
-void		printf_stack(t_stack *stack);
+// # include <stdio.h>
+// void		printf_stack(t_stack *stack);
 
 #endif
