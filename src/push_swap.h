@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/14 15:20:45 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/15 13:26:00 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,8 +156,21 @@ void		sort_tiny(t_stack **stack);
 */
 void		assign_indexes(t_stack *stack_a);
 
-/*FUNÇÃO PRINCIPAL DO ALGORITMO - ADICIONAR COMENTÁRIOS*/
+/*FUNÇÃO PRINCIPAL DO ALGORITMO - EDITAR COMENTÁRIO*/
 void		sort(t_stack **stack_a, t_stack **stack_b);
+
+/*FUNÇÃO PARA ENCONTRAR POSIÇÃO DOS VALORES NA PILHA - EDITAR COMENTÁRIO*/
+void		get_position(t_stack **stack);
+
+/*FUNÇÃO PARA CALCULAR CUSTO DE B - EDITAR COMENTÁRIO*/
+void		calculate_cost_a(t_stack *stack_a);
+
+/*FUNÇÃO PARA CALCULAR CUSTO DE B - EDITAR COMENTÁRIO*/
+void		calculate_cost_b(t_stack *stack_b);
+
+
+/*FUNÇÃO PARA CALCULAR CUSTOS DE B*/
+void		take_cost(t_stack **stack_a, t_stack **stack_b);
 
 /**** Utils for movements ****/
 
@@ -222,8 +235,8 @@ void		error(t_stack **stack);
 long int	ft_atol(const char *nptr);
 void		ft_putstr_fd(char *s, int fd);
 
-# include <stdio.h>
 /*EXCLUIR AO FINAL DO PROJETO*/
+# include <stdio.h>
 void		printf_stack(t_stack *stack);
 
 #endif

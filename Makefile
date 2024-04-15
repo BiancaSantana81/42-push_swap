@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+         #
+#    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 11:36:10 by bsantana          #+#    #+#              #
-#    Updated: 2024/04/13 21:35:58 by bsantana         ###   ########.fr        #
+#    Updated: 2024/04/15 10:56:13 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ CFLAGS = -g3 -Wextra -Werror -Wall
 SRC_DIR = src
 
 # Source directory where .c files are located
-FILES_SRC = checks.c error.c utils.c main.c stack.c stack_utils.c swap.c push.c rotate.c reverse_rotate.c sort_tiny.c sort.c
+FILES_SRC = checks.c error.c utils.c main.c stack.c stack_utils.c swap.c push.c rotate.c reverse_rotate.c \
+sort_tiny.c sort.c cost.c position.c
 
 # List of object files derived from source files
 FILES_SRC_O = $(FILES_SRC:.c=.o)
