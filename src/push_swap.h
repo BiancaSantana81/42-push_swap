@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/15 16:50:22 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:51:59 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,6 +176,28 @@ void		get_position(t_stack **stack);
  */
 void		take_cost(t_stack **stack_a, t_stack **stack_b);
 
+
+/*
+ * Determine the subsequent position in which the
+ * element of stack B should be in relation to stack A.
+ * 
+ * For example, consider a stack with the following values:
+ * 
+ *     A      B
+ * 	   35     5  -- target_pos [35]
+ *     50    25  -- target_pos [35]
+ *     55    10  -- target_pos [35]
+ *           40  -- target_pos [50]
+ * 
+ * To do this, I scroll through the elements of A in relation
+ *  to B, as long as I don't find a higher value in B and as 
+ * long as I don't find a higher value in A than the last 
+ * value updated in target_pos. 
+ * 
+ * Otherwise, I update target_pos to this new value. 
+ */
+void		get_target_position(t_stack **stack_a, t_stack **stack_b);
+
 /**** functions for calculating costs ****/
 
 void		calculate_cost_a(t_stack *stack_a);
@@ -245,7 +267,7 @@ long int	ft_atol(const char *nptr);
 void		ft_putstr_fd(char *s, int fd);
 
 /*EXCLUIR AO FINAL DO PROJETO*/
-// # include <stdio.h>
-// void		printf_stack(t_stack *stack);
+# include <stdio.h>
+void		printf_stack(t_stack *stack);
 
 #endif
