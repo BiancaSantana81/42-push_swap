@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/16 14:51:59 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:54:16 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,16 +166,6 @@ int			media_indexes(t_stack *stack);
  */
 void		get_position(t_stack **stack);
 
-/*
- * Calculates the cost of bringing
- * a value from the stack to the top.
- * If the value is in the second half of the stack,
- *  it is considered negative. Example:
- *  5   20   37  41
- * [0] [1] [-2] [-1]
- */
-void		take_cost(t_stack **stack_a, t_stack **stack_b);
-
 
 /*
  * Determine the subsequent position in which the
@@ -199,6 +189,16 @@ void		take_cost(t_stack **stack_a, t_stack **stack_b);
 void		get_target_position(t_stack **stack_a, t_stack **stack_b);
 
 /**** functions for calculating costs ****/
+
+/*
+ * Calculates the cost of bringing
+ * a value from the stack to the top.
+ * If the value is in the second half of the stack,
+ *  it is considered negative. Example:
+ *  5   20   37  41
+ * [0] [1] [-2] [-1]
+ */
+void		take_cost(t_stack **stack_a, t_stack **stack_b);
 
 void		calculate_cost_a(t_stack *stack_a);
 void		calculate_cost_b(t_stack *stack_b);
