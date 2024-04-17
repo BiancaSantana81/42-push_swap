@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:04:27 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/16 14:05:23 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:32:47 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,11 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	sort_tiny(stack_a);
 	while (*stack_b)
 	{
+		get_position(stack_a);
 		get_position(stack_b);
 		get_target_position(stack_a, stack_b);
 		take_cost(stack_a, stack_b);
+		total_cost(stack_a, stack_b);
 		*stack_b = (*stack_b)->next;
 	}
 }

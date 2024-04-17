@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/16 14:54:16 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:34:04 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_stack
 	int				target_pos;
 	int				cost_a;
 	int				cost_b;
+	int				total_cost;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -203,6 +204,22 @@ void		take_cost(t_stack **stack_a, t_stack **stack_b);
 void		calculate_cost_a(t_stack *stack_a);
 void		calculate_cost_b(t_stack *stack_b);
 
+
+/*
+ * Add up the costs of A and B to find the cheapest movement price.
+ * To do this, it checks what it costs to bring the target_position
+ *  of B to the top of the stack and
+ *  what it costs to bring element B to the top of B.
+ * 
+ *  As an example:
+ * 
+ * 1   8 - target_pos [10] - cost a = 1 - cost b = 0 - total cost = 1
+ * 10  3 - target_pos [10] - cost a = 1 - cost b = 1 - total cost = 2
+ * 11  7 - target_pos [10] - cost a = 1 - cost b = 2 - total cost = 3
+ * 
+ */
+void		total_cost(t_stack **stack_a, t_stack **stack_b);
+
 /**** Utils for movements ****/
 
 /*
@@ -265,6 +282,14 @@ void		error(t_stack **stack);
 
 long int	ft_atol(const char *nptr);
 void		ft_putstr_fd(char *s, int fd);
+
+
+/* This function calculates the sum of two positive values
+ * or their absolute values, if any of the input values 
+ * values is negative. This ensures that the resulting sum
+ * is always correct, even if the input values are negative.
+ */
+int			sum_cost(int a, int b);
 
 /*EXCLUIR AO FINAL DO PROJETO*/
 # include <stdio.h>
