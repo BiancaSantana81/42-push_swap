@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:36:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/17 13:27:57 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:37:53 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	int		stack_size;
-	// t_stack	*current;
 
 	stack_b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))

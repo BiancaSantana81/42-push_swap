@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/17 14:20:47 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:17:12 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,7 +167,6 @@ int			media_indexes(t_stack *stack);
  */
 void		get_position(t_stack **stack);
 
-
 /*
  * Determine the subsequent position in which the
  * element of stack B should be in relation to stack A.
@@ -204,7 +203,6 @@ void		take_cost(t_stack **stack_a, t_stack **stack_b);
 void		calculate_cost_a(t_stack *stack_a);
 void		calculate_cost_b(t_stack *stack_b);
 
-
 /*
  * Add up the costs of A and B to find the cheapest movement price.
  * To do this, it checks what it costs to bring the target_position
@@ -220,12 +218,35 @@ void		calculate_cost_b(t_stack *stack_b);
  */
 void		total_cost(t_stack **stack_a, t_stack **stack_b);
 
-
 /* Returns the cheapest total cost. */
 int			find_cheaper(t_stack **stack_b);
 
-/*FUNÇÃO PARA ENCONTRAR A MELHOR OPERAÇÃO A SER FEITA - COM MENOS CUSTOS - TESTES E COMENTÁRIO*/
-void		find_better_operation(t_stack **stack_b);
+/* Finds the best operation to carry
+ * out according to the cheapest total cost. 
+ */
+void		find_better_operation(t_stack **stack_a, t_stack **stack_b);
+
+
+/* REALIZA AS MOVIMENTAÇÕES DE ACORDO COM O VALOR
+MENOS CUSTOSO DA STACK - Terminar, testes e comentário */
+void		moves(t_stack **stack_a,
+				t_stack **stack_b, int target_pos, int pos);
+
+/*ROTAÇÃO  REVERSA DE DOIS ELEMENTOS E
+ACRÉSCIMO DO CUSTO - Revisar, testes e comentário */
+void		both_rrr(t_stack **stack_a,
+				t_stack **stack_b, int *cost_a, int *cost_b);
+
+/*ROTAÇÃO  REVERSA DE DOIS ELEMENTOS E
+DECRÉSCIMO DO CUSTO - Revisar, testes e comentário */
+void		both_rr(t_stack **stack_a,
+				t_stack **stack_b, int *cost_a, int *cost_b);
+
+/* MOVIMENTAÇÃO DE A */
+void		move_a(t_stack **stack_a, int *cost_a);
+
+/* MOVIMENTAÇÃO DE B */
+void		move_b(t_stack **stack_b, int *cost_b);
 
 /**** Utils for movements ****/
 
@@ -289,7 +310,6 @@ void		error(t_stack **stack);
 
 long int	ft_atol(const char *nptr);
 void		ft_putstr_fd(char *s, int fd);
-
 
 /* This function calculates the sum of two positive values
  * or their absolute values, if any of the input values 

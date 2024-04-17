@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:37:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/17 13:29:23 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/17 16:57:35 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,11 @@ void	printf_stack(t_stack *stack)
 	while (stack != NULL)
 	{
 		printf("valor: %d", stack->value);
-		printf("  custo de a: %d", stack->cost_a);
-		printf("  custo de b: %d", stack->cost_b);
-		printf("  custo total: %d\n", stack->total_cost);
+		// printf("  custo de a: %d", stack->cost_a);
 		// printf("  custo de b: %d", stack->cost_b);
 		// printf("  custo total: %d\n", stack->total_cost);
+		// // printf("  custo de b: %d", stack->cost_b);
+		// // printf("  custo total: %d\n", stack->total_cost);
 		stack = stack->next;
 	}
 }
