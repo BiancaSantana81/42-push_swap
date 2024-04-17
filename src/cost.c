@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 10:02:21 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/17 13:12:51 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:52:02 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,18 @@ void	total_cost(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-int	sum_cost(int a, int b)
+int	find_cheaper(t_stack **stack_b)
 {
-	if (a < 0)
-		a *= -1;
-	if (b < 0)
-		b *= -1;
-	return (a + b);
+	t_stack	*current;
+	int		lower_cost;
+
+	current = *stack_b;
+	lower_cost = current->total_cost;
+	while (current)
+	{
+		if (lower_cost > current->total_cost)
+			lower_cost = current->total_cost;
+		current = current->next;
+	}
+	return (lower_cost);
 }
