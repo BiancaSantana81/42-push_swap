@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/17 13:54:31 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:20:47 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -223,6 +223,9 @@ void		total_cost(t_stack **stack_a, t_stack **stack_b);
 
 /* Returns the cheapest total cost. */
 int			find_cheaper(t_stack **stack_b);
+
+/*FUNÇÃO PARA ENCONTRAR A MELHOR OPERAÇÃO A SER FEITA - COM MENOS CUSTOS - TESTES E COMENTÁRIO*/
+void		find_better_operation(t_stack **stack_b);
 
 /**** Utils for movements ****/
 
