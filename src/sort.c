@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:04:27 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/17 16:49:28 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:50:19 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,37 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 		take_cost(stack_a, stack_b);
 		total_cost(stack_a, stack_b);
 		find_better_operation(stack_a, stack_b);
-		*stack_b = (*stack_b)->next;
+	}
+	get_position(stack_a);
+	printf("STACK A ANTES DE ORDENAR:\n");
+	printf_stack(*stack_a);
+	if (is_sorted(*stack_a) == 1)
+		sorting_stack_a(stack_a);
+	printf("STACK A DEPOIS DE ORDENAR:\n");
+	printf_stack(*stack_a);
+}
+
+void	sorting_stack_a(t_stack **stack_a)
+{
+	int	stack_size;
+	int	lower_index;
+
+	stack_size = get_stack_size(*stack_a);
+	lower_index = lowest_index(*stack_a);
+	if (lower_index > stack_size / 2)
+	{
+		while (lower_index < stack_size)
+		{
+			do_ra(stack_a);
+			lower_index++;
+		}
+	}
+	else
+	{
+		while (lower_index > (*stack_a)->pos)
+		{
+			do_ra(stack_a);
+			lower_index--;
+		}
 	}
 }

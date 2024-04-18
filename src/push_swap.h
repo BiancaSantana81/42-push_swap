@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/17 18:17:12 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:21:09 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,9 @@ void		sort_tiny(t_stack **stack);
 /*FUNÇÃO PRINCIPAL DO ALGORITMO - EDITAR COMENTÁRIO*/
 void		sort(t_stack **stack_a, t_stack **stack_b);
 
+/* MENOR INDÍCE: em teste e adicionar comentário */
+int			lowest_index(t_stack *stack);
+
 /* Search for the index with the highest value. */
 int			highest_index(t_stack *stack);
 
@@ -163,7 +166,15 @@ int			media_indexes(t_stack *stack);
 /* Function to find the position of the value in the list.
  *
  * Initializes the list and increments
- * stack->pos according to its position on the stack. 
+ * stack->pos according to its position on the stack.
+ * 
+ * Example of a stack with values and positions
+ * 
+ *     5 | 0
+ *     8 | 1
+ *    12 | 2
+ *     3 | 3
+ *     7 | 4
  */
 void		get_position(t_stack **stack);
 
@@ -221,32 +232,57 @@ void		total_cost(t_stack **stack_a, t_stack **stack_b);
 /* Returns the cheapest total cost. */
 int			find_cheaper(t_stack **stack_b);
 
-/* Finds the best operation to carry
- * out according to the cheapest total cost. 
+/* 
+ * Finds the best operation to perform
+ * based on the lowest total cost.
+ * Once the operation with the lowest
+ * cost is found, it calls the 'moves' function.
  */
 void		find_better_operation(t_stack **stack_a, t_stack **stack_b);
 
-
-/* REALIZA AS MOVIMENTAÇÕES DE ACORDO COM O VALOR
-MENOS CUSTOSO DA STACK - Terminar, testes e comentário */
+/*
+ * Traverses stack A until finding the
+ target_pos and stack B until finding position pos.
+ * Once these values are found, it begins
+ * traversing stack B and performs movements according to its cost.
+ * 
+ * - If the cost of A and the cost of B
+ * are both greater than 0, performs rotation of both.
+ * - If the cost of A and the cost of B
+ * are both less than 0, performs reverse rotation of both.
+ * - If only A or only B has a positive
+ * cost, performs rotation of that stack.
+ * - If only A or only B has a negative
+ * cost, performs reverse rotation of that stack.
+ * - If both values are positive, interrupts movements and pushes B to A.
+ */
 void		moves(t_stack **stack_a,
 				t_stack **stack_b, int target_pos, int pos);
 
-/*ROTAÇÃO  REVERSA DE DOIS ELEMENTOS E
-ACRÉSCIMO DO CUSTO - Revisar, testes e comentário */
-void		both_rrr(t_stack **stack_a,
-				t_stack **stack_b, int *cost_a, int *cost_b);
+/*
+ * Performs reverse rotation on both stacks until
+ * their value matches the index passed as an argument in moves.
+ */
+void		both_rrr(t_stack **stack_a, t_stack **stack_b, int a, int b);
 
-/*ROTAÇÃO  REVERSA DE DOIS ELEMENTOS E
-DECRÉSCIMO DO CUSTO - Revisar, testes e comentário */
-void		both_rr(t_stack **stack_a,
-				t_stack **stack_b, int *cost_a, int *cost_b);
+/*
+ * Performs rotation on both stacks until
+ * their value matches the index passed as an argument in moves.
+ */
+void		both_rr(t_stack **stack_a, t_stack **stack_b, int a, int b);
 
-/* MOVIMENTAÇÃO DE A */
-void		move_a(t_stack **stack_a, int *cost_a);
+/*
+ * Performs rotation on A until reaching the target_pos.
+ */
+void		move_a(t_stack **stack_a, int pos);
 
-/* MOVIMENTAÇÃO DE B */
-void		move_b(t_stack **stack_b, int *cost_b);
+/*
+ * Performs rotation on B until reaching pos.
+ */
+void		move_b(t_stack **stack_b, int pos);
+
+/* ORDENAR STACK_A APÓS ELA FICAR VAZIA - testes e comentário */
+void		sorting_stack_a(t_stack **stack_a);
 
 /**** Utils for movements ****/
 
@@ -319,7 +355,7 @@ void		ft_putstr_fd(char *s, int fd);
 int			sum_cost(int a, int b);
 
 /*EXCLUIR AO FINAL DO PROJETO*/
-# include <stdio.h>
-void		printf_stack(t_stack *stack);
+// # include <stdio.h>
+// void		printf_stack(t_stack *stack);
 
 #endif

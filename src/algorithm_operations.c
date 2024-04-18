@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:00:29 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/17 18:18:43 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/18 14:26:57 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ void	moves(t_stack **stack_a, t_stack **stack_b, int target_pos, int pos)
 	while (current_b)
 	{
 		if (current_a->cost_a > 0 && current_b->cost_b > 0)
-			both_rrr(stack_a, stack_b, &current_a->cost_a, &current_b->cost_b);
-		else if (current_a->cost_a < 0 && current_b->cost_b < 0)
-			both_rr(stack_a, stack_b, &current_a->cost_a, &current_b->cost_b);
-		move_a(stack_a, &current_a->cost_a);
-		move_b(stack_b, &current_b->cost_b);
-		if (current_a-> cost_a == 0 && current_b->cost_b == 0)
+			both_rr(stack_a, stack_b, current_a->index, current_b->index);
+		else if (current_a->cost_a < 0 && current_b->cost_a < 0)
+			both_rrr(stack_a, stack_b, current_a->index, current_a->index);
+		move_a(stack_a, target_pos);
+		move_b(stack_b, pos);
+		if (current_a->cost_a == 0 && current_b->cost_b == 0)
 			break ;
 		current_b = current_b->next;
 	}
-	// do_pa(stack_a, stack_b);
+	do_pa(stack_a, stack_b);
 }

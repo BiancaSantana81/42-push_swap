@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 13:58:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/15 14:19:21 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:21:11 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,20 @@ int	highest_index(t_stack *stack)
 	while (stack)
 	{
 		if (index < stack->index)
+			index = stack->index;
+		stack = stack->next;
+	}
+	return (index);
+}
+
+int	lowest_index(t_stack *stack)
+{
+	int	index;
+
+	index = stack->index;
+	while (stack)
+	{
+		if (index > stack->index)
 			index = stack->index;
 		stack = stack->next;
 	}
