@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:34:50 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/18 14:07:22 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:03:31 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	move_a(t_stack **stack_a, int pos)
 					do_ra(stack_a);
 					current->cost_a--;
 				}
-				if (current->cost_a > 0)
+				if (current->cost_a < 0)
 				{
 					do_rra(stack_a);
 					current->cost_a++;
@@ -86,7 +86,7 @@ void	move_b(t_stack **stack_b, int pos)
 					do_ra(stack_b);
 					current->cost_b--;
 				}
-				if (current->cost_b > 0)
+				if (current->cost_b < 0)
 				{
 					do_rra(stack_b);
 					current->cost_b++;

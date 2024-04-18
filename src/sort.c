@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:04:27 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/18 16:50:19 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:27:54 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	printf_stack(*stack_a);
 	if (is_sorted(*stack_a) == 1)
 		sorting_stack_a(stack_a);
-	printf("STACK A DEPOIS DE ORDENAR:\n");
-	printf_stack(*stack_a);
+	// printf("STACK A DEPOIS DE ORDENAR:\n");
+	// printf_stack(*stack_a);
 }
 
 void	sorting_stack_a(t_stack **stack_a)
@@ -70,7 +70,7 @@ void	sorting_stack_a(t_stack **stack_a)
 	}
 	else
 	{
-		while (lower_index > (*stack_a)->pos)
+		while (lower_index > 0)
 		{
 			do_ra(stack_a);
 			lower_index--;
