@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:04:27 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/19 16:43:23 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:24:59 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,24 +52,24 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 void	sorting_stack_a(t_stack **stack_a)
 {
 	int		stack_size;
-	int		lower_index;
+	int		lower_pos;
 
 	stack_size = get_stack_size(*stack_a);
-	lower_index = lowest_index(*stack_a);
-	if (lower_index > stack_size / 2)
+	lower_pos = lowest_pos(*stack_a);
+	if (lower_pos > stack_size / 2)
 	{
-		while (lower_index < stack_size)
+		while (lower_pos < stack_size)
 		{
 			do_rra(stack_a);
-			lower_index++;
+			lower_pos++;
 		}
 	}
 	else
 	{
-		while (lower_index != 0)
+		while (lower_pos != 0)
 		{
 			do_ra(stack_a);
-			lower_index--;
+			lower_pos--;
 		}
 	}
 }

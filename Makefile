@@ -6,7 +6,7 @@
 #    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 11:36:10 by bsantana          #+#    #+#              #
-#    Updated: 2024/04/19 16:04:01 by bsantana         ###   ########.fr        #
+#    Updated: 2024/04/19 17:32:26 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,6 @@ sort_tiny.c sort.c cost.c position.c algorithm_operations.c moves.c
 
 # List of object files derived from source files
 FILES_SRC_O = $(FILES_SRC:.c=.o)
-
-# List of header files directories
-HEADERS_FILE = ./inc/push_swap.h
 
 # Get the list of source files with the correct path
 SRCS = $(addprefix $(SRC_DIR)/, $(FILES_SRC))

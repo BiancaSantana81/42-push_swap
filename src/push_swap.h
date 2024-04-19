@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/19 16:42:35 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:38:35 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ int			get_stack_size(t_stack *stack);
 /* 
  * Checks if the stack is sorted.
  *  - Returns 1 if not sorted.
- *   - Returns 0 if sorted. 
+ *  - Returns 0 if sorted. 
  */
 int			is_sorted(t_stack *stack);
 
@@ -136,11 +136,17 @@ void		push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size);
  */
 void		sort_tiny(t_stack **stack);
 
-/*FUNÇÃO PRINCIPAL DO ALGORITMO - EDITAR COMENTÁRIO*/
+/* 
+ * Sorts stack_a after all elements have
+ * been pushed from stack B to stack A.
+ * As long as the smallest index does not reach position 0,
+ *  the value is rotated (if it is in the second
+ *  half of the stack) or rotated in reverse. 
+ */
 void		sort(t_stack **stack_a, t_stack **stack_b);
 
-/* MENOR INDÍCE: em teste e adicionar comentário */
-int			lowest_index(t_stack *stack);
+/* Find the lowest index and the lowest position in the stack. */
+int			lowest_pos(t_stack *stack);
 
 /* Search for the index with the highest value. */
 int			highest_index(t_stack *stack);
@@ -281,7 +287,12 @@ void		move_a(t_stack **stack_a, int target_pos);
  */
 void		move_b(t_stack **stack_b, int current_pos);
 
-/* ORDENAR STACK_A APÓS ELA FICAR VAZIA - testes e comentário */
+/*
+ * Sorts stack_a after the elements of stack
+ * B have been pushed onto stack A.
+ * If the smallest value is in the second half of the stack,
+ * it rotates it until it reaches position 0. 
+ */
 void		sorting_stack_a(t_stack **stack_a);
 
 /**** Utils for movements ****/
