@@ -6,11 +6,26 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:37:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/10 16:46:33 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:42:26 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	get_stack_size(t_stack *stack)
+{
+	int	size;
+
+	size = 0;
+	if (!stack)
+		return (0);
+	while (stack)
+	{
+		stack = stack->next;
+		size++;
+	}
+	return (size);
+}
 
 t_stack	*add_node(int nbr)
 {
@@ -20,11 +35,12 @@ t_stack	*add_node(int nbr)
 	if (!new_node)
 		return (NULL);
 	new_node->value = nbr;
-	new_node->index = 0;
-	new_node->pos = -1;
-	new_node->target_pos = -1;
-	new_node->cost_a = -1;
-	new_node->cost_b = -1;
+	new_node->index = 1;
+	new_node->pos = 0;
+	new_node->target_pos = 0;
+	new_node->cost_a = 0;
+	new_node->cost_b = 0;
+	new_node->total_cost = 0;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -58,27 +74,3 @@ t_stack	*get_before_bottom_list(t_stack *stack)
 		stack = stack->next;
 	return (stack);
 }
-
-int	get_stack_size(t_stack *stack)
-{
-	int	size;
-
-	size = 0;
-	if (!stack)
-		return (0);
-	while (stack)
-	{
-		stack = stack->next;
-		size++;
-	}
-	return (size);
-}
-
-// void	printf_stack(t_stack *stack)
-// {
-// 	while (stack != NULL)
-// 	{
-// 		printf("valor: %d\n next: %d", stack->value, stack->next);
-// 		stack = stack->next;
-// 	}
-// }

@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:19:39 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/09 13:46:43 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:22:11 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ int	correct_input(char **argv)
 	nb_zeros = 0;
 	while (argv[i])
 	{
+		if (!argv[i][0])
+			return (1);
 		if (only_numbers(argv[i]) == 1)
 			return (1);
 		if (repeats_numbers(&argv[i]) == 1)

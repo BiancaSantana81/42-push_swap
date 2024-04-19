@@ -6,7 +6,7 @@
 #    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 11:36:10 by bsantana          #+#    #+#              #
-#    Updated: 2024/04/10 16:45:25 by bsantana         ###   ########.fr        #
+#    Updated: 2024/04/19 16:04:01 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,14 @@ NAME = push_swap
 
 # Flags
 CC = cc
-CFLAGS = -g3 -Wextra -Werror -Wall
+CFLAGS =  -O3 -g3 -Wextra -Werror -Wall
 
 # Files
 SRC_DIR = src
 
 # Source directory where .c files are located
-FILES_SRC = checks.c error.c utils.c main.c stack.c stack_utils.c swap.c push.c rotate.c reverse_rotate.c
+FILES_SRC = checks.c error.c utils.c main.c stack.c stack_utils.c swap.c push.c rotate.c reverse_rotate.c \
+sort_tiny.c sort.c cost.c position.c algorithm_operations.c moves.c
 
 # List of object files derived from source files
 FILES_SRC_O = $(FILES_SRC:.c=.o)
