@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/19 14:34:57 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:42:35 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -353,9 +353,5 @@ void		ft_putstr_fd(char *s, int fd);
  * is always correct, even if the input values are negative.
  */
 int			sum_cost(int a, int b);
-
-/*EXCLUIR AO FINAL DO PROJETO*/
-# include <stdio.h>
-void		printf_stack(t_stack *stack);
 
 #endif

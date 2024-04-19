@@ -6,7 +6,7 @@
 #    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 11:36:10 by bsantana          #+#    #+#              #
-#    Updated: 2024/04/17 15:35:11 by bsantana         ###   ########.fr        #
+#    Updated: 2024/04/19 16:04:01 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ NAME = push_swap
 
 # Flags
 CC = cc
-CFLAGS = -g3 -Wextra -Werror -Wall
+CFLAGS =  -O3 -g3 -Wextra -Werror -Wall
 
 # Files
 SRC_DIR = src
