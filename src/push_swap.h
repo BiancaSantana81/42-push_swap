@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:40:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/18 18:30:13 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:34:57 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -274,12 +274,12 @@ void		both_rr(t_stack **stack_a, t_stack **stack_b, int a, int b);
 /*
  * Performs rotation on A until reaching the target_pos.
  */
-void		move_a(t_stack **stack_a, int pos);
+void		move_a(t_stack **stack_a, int target_pos);
 
 /*
  * Performs rotation on B until reaching pos.
  */
-void		move_b(t_stack **stack_b, int pos);
+void		move_b(t_stack **stack_b, int current_pos);
 
 /* ORDENAR STACK_A APÓS ELA FICAR VAZIA - testes e comentário */
 void		sorting_stack_a(t_stack **stack_a);
@@ -355,7 +355,7 @@ void		ft_putstr_fd(char *s, int fd);
 int			sum_cost(int a, int b);
 
 /*EXCLUIR AO FINAL DO PROJETO*/
-// # include <stdio.h>
-// void		printf_stack(t_stack *stack);
+# include <stdio.h>
+void		printf_stack(t_stack *stack);
 
 #endif

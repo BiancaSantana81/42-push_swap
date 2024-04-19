@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:37:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/04/18 18:35:30 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:37:24 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,12 @@ t_stack	*get_before_bottom_list(t_stack *stack)
 	return (stack);
 }
 
-void	printf_stack(t_stack *stack)
-{
-	while (stack != NULL)
-	{
-		printf("valor: %d ", stack->value);
-		printf("index: %d\n", stack->index);
-		stack = stack->next;
-	}
-}
+// void	printf_stack(t_stack *stack)
+// {
+// 	while (stack != NULL)
+// 	{
+// 		printf("valor: %d ", stack->value);
+// 		printf("index: %d\n", stack->index);
+// 		stack = stack->next;
+// 	}
+// }
